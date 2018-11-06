@@ -49,7 +49,7 @@ Installation of libraries (using root user):
 Cloning the repository and compiling (use any user with the sudo group):
 
     cd
-    git clone https://github.com/openbit/Openbit.git
+    git clone https://github.com/openbitteam/Openbit.git
     cd Openbit
     chmod +x autogen.sh
     cd Openbit/share
@@ -81,7 +81,7 @@ Demon status:
 
 All binaries for different operating systems, you can download in the releases repository:
 
-https://github.com/openbit/Openbit/releases
+https://github.com/openbitteam/Openbit/releases
 
 ***
 
