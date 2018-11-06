@@ -1,0 +1,26 @@
+# /etc/conf.d/Openbitd: config file for /etc/init.d/Openbitd
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/Openbit/Openbit.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/Openbitd"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/Openbitd.pid"
+
+# Where to write Openbitd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/Openbitd"
+
+# User and group to own Openbitd process
+#BITCOIND_USER="Openbit"
+#BITCOIND_GROUP="Openbit"
+
+# Path to Openbitd executable
+#BITCOIND_BIN="/usr/bin/Openbitd"
+
+# Nice value to run Openbitd under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

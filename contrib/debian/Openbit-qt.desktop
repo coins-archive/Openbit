@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Openbit
+Comment=Openbit P2P Cryptocurrency
+Comment[fr]=Openbit, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Openbit, eşten eşe kriptografik sanal para birimi
+Exec=Openbit-qt %u
+Terminal=false
+Type=Application
+Icon=Openbit128
+MimeType=x-scheme-handler/Openbit;
+Categories=Office;Finance;
