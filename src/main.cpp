@@ -2129,38 +2129,29 @@ int64_t GetBlockValue(int nHeight)
             return 10 * COIN;
     }
 
-    if (nHeight == 0) {
-        nSubsidy = 175080 * COIN;
+    if (nHeight == 1) {
+        nSubsidy = 500000 * COIN;
     }
-    else if (nHeight < 10000 && nHeight > 0) {
+    else if (nHeight <= 500 && nHeight > 1) {
         nSubsidy = 0.1 * COIN;
     }
-    else if (nHeight <= 19999 && nHeight >= 10000) {
-        nSubsidy = 12 * COIN;
+    else if (nHeight <= 1000 && nHeight > 500) {
+        nSubsidy = 0.5 * COIN;
     }
-    else if (nHeight <= 29999 && nHeight >= 20000) {
-        nSubsidy = 22 * COIN;
+    else if (nHeight <= 25000 && nHeight > 1000) {
+        nSubsidy = 1 * COIN;
     }
-    else if (nHeight <= 39999 && nHeight >= 30000) {
-        nSubsidy = 32 * COIN;
+    else if (nHeight <= 50000 && nHeight > 25000) {
+        nSubsidy = 2 * COIN;
     }
-    else if (nHeight <= 49999 && nHeight >= 40000) {
-        nSubsidy = 52 * COIN;
+    else if (nHeight <= 75000 && nHeight > 50000) {
+        nSubsidy = 3 * COIN;
     }
-    else if (nHeight <= 59999 && nHeight >= 50000) {
-        nSubsidy = 32 * COIN;
-    }
-    else if (nHeight <= 69999 && nHeight >= 60000) {
-        nSubsidy = 22 * COIN;
-    }
-    else if (nHeight <= 79999 && nHeight >= 70000) {
-        nSubsidy = 20 * COIN;
-    }
-    else if (nHeight >= 80000) {
-        nSubsidy = 12 * COIN;
+    else if (nHeight <= 125000 && nHeight > 75000) {
+        nSubsidy = 2 * COIN;
     }
     else {
-        nSubsidy = 0 * COIN;
+        nSubsidy = 4 * COIN;
     }
 
     nSubsidy >>= halvings;
@@ -2173,17 +2164,17 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
     int64_t ret = 0;
 
     //Testnet 
- if (Params().NetworkID() == CBaseChainParams::TESTNET) {
-  if (nHeight < 200)
-    return 0;
- }
+    if (Params().NetworkID() == CBaseChainParams::TESTNET) {
+      if (nHeight < 200)
+        return 0;
+    }
 
-    // 75% for Masternodes
- if (nHeight == 0) {
-  ret = blockValue  / 100 * 0;
- } else if (nHeight > 200) {
-  ret = blockValue  / 100 * 75;
- }
+    // 80% for Masternodes
+    if (nHeight == 0) {
+     ret = blockValue  / 100 * 0;
+    } else if (nHeight > 500) {
+      ret = blockValue  / 100 * 80;
+    }
 
     return ret;
 }
